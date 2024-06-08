@@ -10,7 +10,6 @@
 
 body {
   line-height: 1.5;
-  margin: 10px;
   font-size: 20px;
 }
 
@@ -34,4 +33,14 @@ ol {
 img {
   display: block;
   max-width: 100%;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+button {
+  font-family: inherit;
+  color: currentColor;
+  border: none;
 }

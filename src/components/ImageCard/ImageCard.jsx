@@ -1,28 +1,25 @@
 import { BsInstagram } from "react-icons/bs";
+import css from "./ImageCard.module.css";
 
 const ImageCard = ({ data: { urls, alt_description, description, user } }) => {
-  const containsRussia = description
-    ? description.toLowerCase().includes("russia")
-    : false;
-
   return (
-    <div>
+    <div className={css.card}>
       <img src={urls.small} alt={alt_description} />
-      {containsRussia ? (
-        <p>ЙОБАНА БЛЯДЬ РУСНЯ</p>
-      ) : description ? (
-        <p>{description}</p>
+      {description ? (
+        <p className={css.description}>{description}</p>
       ) : (
-        <p>No description</p>
+        <p className={css.description}>No description</p>
       )}
       {user.instagram_username && (
-        <div>
-          <BsInstagram />
+        <div className={css.instagram}>
           <a
             href={`https://instagram.com/${user.instagram_username}`}
             target="_blank"
             rel="noreferrer noopener"
+            className={css.link}
           >
+            <BsInstagram />
+
             {user.instagram_username}
           </a>
         </div>
