@@ -7,20 +7,7 @@ import fetchImagesWithTopic from "./images-api";
 import { Toaster } from "react-hot-toast";
 import LoadMoreBtn from "./LoadMoreBtn/LoadMoreBtn";
 import Empty from "./Empty/Empty";
-import Modal from "react-modal";
 
-Modal.setAppElement("#yourAppElement");
-
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
 const App = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
