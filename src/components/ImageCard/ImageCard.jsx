@@ -1,10 +1,16 @@
 import { BsInstagram } from "react-icons/bs";
 import css from "./ImageCard.module.css";
 
-const ImageCard = ({ data: { urls, alt_description, description, user } }) => {
+const ImageCard = ({
+  data: { urls, alt_description, description, user },
+  openModal,
+}) => {
+  const handleClick = () => {
+    openModal({ urls, description, alt_description });
+  };
   return (
     <div className={css.card}>
-      <img src={urls.small} alt={alt_description} />
+      <img src={urls.small} alt={alt_description} onClick={handleClick} />
       {description ? (
         <p className={css.description}>{description}</p>
       ) : (
