@@ -8,7 +8,10 @@ const SearchBar = ({ onSearch }) => {
     const form = evt.target;
     const topic = form.elements.topic.value;
     if (!topic.trim()) {
-      toast.error("You must write something");
+      toast.error("You must write something", {
+        position: "top-right",
+        duration: 1000,
+      });
       return;
     }
     onSearch(topic);
