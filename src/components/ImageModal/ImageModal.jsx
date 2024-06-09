@@ -1,6 +1,7 @@
 import Modal from "react-modal";
 Modal.setAppElement("#root");
 import css from "./ImageModal.module.css";
+import { useEffect } from "react";
 
 const customStyles = {
   content: {
@@ -18,6 +19,18 @@ const customStyles = {
 };
 
 const ImageModal = ({ closeModal, isOpen, imageModal }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add(css.noScroll);
+    } else {
+      document.body.classList.remove(css.noScroll);
+    }
+
+    return () => {
+      document.body.classList.remove(css.noScroll);
+    };
+  }, [isOpen]);
+
   return (
     <Modal
       isOpen={isOpen}

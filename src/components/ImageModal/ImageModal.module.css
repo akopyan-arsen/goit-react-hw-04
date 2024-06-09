@@ -6,3 +6,7 @@
 .modalDesc {
   padding: 16px;
 }
+
+.noScroll {
+  overflow: hidden;
+}
